@@ -11,14 +11,14 @@ function App() {
   return (
     <>
       <Header />
-      {/* <Hero />
+      <Hero />
       <Services />
       <HeadingTitle title="Most gifted" />
       <BookSlider data={books} />
       <HeadingTitle title="Best seller" />
       <BookSlider data={books} />
       <HeadingTitle title="Most wished for" />
-      <BookSlider data={books} /> */}
+      <BookSlider data={books} />
       <Footer />
     </>
   );
