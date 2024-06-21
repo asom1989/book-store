@@ -5,19 +5,21 @@ import BookSlider from "./components/Services/BookSlider/BookSlider";
 import Services from "./components/Services/Services";
 import { books } from "./assets/data/books";
 import HeadingTitle from "./components/HeadingTitle/HeadingTitle";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <>
       <Header />
-      <Hero />
+      {/* <Hero />
       <Services />
       <HeadingTitle title="Most gifted" />
       <BookSlider data={books} />
       <HeadingTitle title="Best seller" />
       <BookSlider data={books} />
       <HeadingTitle title="Most wished for" />
-      <BookSlider data={books} />
+      <BookSlider data={books} /> */}
+      <Footer />
     </>
   );
 }
