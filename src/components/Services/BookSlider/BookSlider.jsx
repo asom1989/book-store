@@ -1,9 +1,19 @@
 import { useState } from "react";
 import "./BookSlider.css";
 import Rating from "./Rating";
+import Modal from "../../Modal/Modal";
 
 function BookSlider({ data }) {
   const [slideIndex, setSlideIndex] = useState(0);
+  const [openModal, setOpenModal] = useState(false);
+  const [bookData, setBookData] = useState(null);
+
+  // handle Modal
+  const handleModal = (book) => {
+    setOpenModal(true);
+    setBookData(book);
+  };
+
   const handleClick = (direction) => {
     direction === "left"
       ? setSlideIndex(slideIndex - 1)
@@ -33,7 +43,7 @@ function BookSlider({ data }) {
             <Rating rating={item.rating} reviews={item.reviews} />
             <p className="book-slide-item-price">{item.price} $</p>
             <div className="book-slider-icons-wrapper">
-              <i className="bi bi-eye-fill" />
+              <i onClick={() => handleModal(item)} className="bi bi-eye-fill" />
               <i className="bi bi-cart-plus" />
             </div>
           </div>
@@ -45,6 +55,7 @@ function BookSlider({ data }) {
           className="bi bi-chevron-right book-slider-arrow-right"
         />
       )}
+      {openModal && <Modal bookData={bookData} setOpenModal={setOpenModal} />}
     </article>
   );
 }
