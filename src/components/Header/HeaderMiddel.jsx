@@ -1,11 +1,13 @@
+import { Link } from "react-router-dom";
+
 function HeaderMiddel() {
   return (
     <div className="header-middel flex">
-      <div className="header-middel-logo flex">
+      <Link to="/" className="header-middel-logo flex">
         <b>Book</b>
         <i className="bi bi-book" />
         <b>Store</b>
-      </div>
+      </Link>
       <div className="header-middel-search-box">
         <input
           className="header-middel-search-input"
@@ -14,9 +16,9 @@ function HeaderMiddel() {
         />
         <i className="bi bi-search" />
       </div>
-      <div className="header-middle-cart-wrapper">
+      <Link to="/cart" className="header-middle-cart-wrapper">
         <i className="bi bi-cart2" />
-      </div>
+      </Link>
     </div>
   );
 }
