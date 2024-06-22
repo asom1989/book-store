@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
 import Rating from "../Services/BookSlider/Rating";
 import "./Modal.css";
 
 function Modal({ bookData, setOpenModal }) {
-  const { image, title, inStock, rating, reviews, author, price } = bookData;
+  const { image, title, inStock, rating, reviews, author, price, id } =
+    bookData;
   return (
     <div onClick={() => setOpenModal(false)} className="modal-container">
       <div onClick={(e) => e.stopPropagation()} className="modal-content">
@@ -38,7 +40,9 @@ function Modal({ bookData, setOpenModal }) {
               Add To Cart
             </button>
           </div>
-          <div className="modal-content-info-link">See More Details</div>
+          <Link to={`/book/${id}`} className="modal-content-info-link">
+            See More Details
+          </Link>
         </div>
       </div>
     </div>
