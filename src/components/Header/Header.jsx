@@ -1,8 +1,6 @@
 import "./Header.css";
 import { useState } from "react";
-import HeaderMiddel from "./HeaderMiddel";
-import HeaderTop from "./HeaderTop";
-import Navbar from "./Navbar";
+import { HeaderMiddel, HeaderTop, Navbar } from "../index";
 
 function Header() {
   const [toggleMenu, setToggleMenu] = useState(false);

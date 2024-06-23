@@ -73,6 +73,10 @@ header {
   font-size: 30px;
   color: gray;
 }
+.header-middle-cart-wrapper {
+  position: relative;
+}
+
 .header-middle-cart-wrapper i {
   font-size: 44px;
   color: white;
@@ -86,6 +90,21 @@ nav.flex {
   justify-content: center;
 }
 
+.cart-notification {
+  position: absolute;
+  top: -13px;
+  right: 5px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 17px;
+}
+
 nav.flex ul {
   display: flex;
   align-items: center;
@@ -93,6 +112,7 @@ nav.flex ul {
 }
 
 .navbar-link {
+  text-decoration: none;
   padding: 0 20px;
   font-size: 21px;
   font-weight: 600;

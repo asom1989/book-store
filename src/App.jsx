@@ -1,25 +1,34 @@
 import "./App.css";
-import Header from "./components/Header/Header";
-import Hero from "./components/Hero/Hero";
-import BookSlider from "./components/Services/BookSlider/BookSlider";
-import Services from "./components/Services/Services";
-import { books } from "./assets/data/books";
-import HeadingTitle from "./components/HeadingTitle/HeadingTitle";
-import Footer from "./components/Footer/Footer";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Header, Footer } from "./components/index";
+import {
+  Home,
+  About,
+  Authors,
+  Cart,
+  Login,
+  Register,
+  Contact,
+  Book,
+} from "./pages/index";
 
 function App() {
   return (
     <>
-      <Header />
-      {/* <Hero />
-      <Services />
-      <HeadingTitle title="Most gifted" />
-      <BookSlider data={books} />
-      <HeadingTitle title="Best seller" />
-      <BookSlider data={books} />
-      <HeadingTitle title="Most wished for" />
-      <BookSlider data={books} /> */}
-      <Footer />
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/authors" element={<Authors />} />
+          <Route path="/cart" element={<Cart />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/book/:id" element={<Book />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </>
   );
 }
