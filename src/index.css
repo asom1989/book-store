@@ -25,6 +25,12 @@ input:focus {
   display: flex;
   align-items: center;
 }
+button:active {
+  scale: 0.9;
+}
+a:active {
+  scale: 0.9;
+}
 
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
