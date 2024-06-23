@@ -2,8 +2,13 @@ import "./Book.css";
 import { useParams } from "react-router-dom";
 import { books } from "../../assets/data/books";
 import Rating from "../../components/Services/BookSlider/Rating";
+import { useContext, useState } from "react";
+import CartContext from "../../context/CartContext";
 
 function Book() {
+  const { addToCart } = useContext(CartContext);
+  const [quantity, setQuantity] = useState(1);
+
   const { id } = useParams();
   const book = books.find((book) => book.id === +id); //eller parsInt(id)
   return (
@@ -23,11 +28,16 @@ function Book() {
           <div className="book-add-to-cart">
             <input
               type="number"
-              min={1}
-              max={100}
+              min="1"
+              max="100"
+              value={quantity}
+              onChange={(e) => setQuantity(e.target.value)}
               className="book-add-to-cart-input"
             />
-            <button className="book-add-to-cart-btn">
+            <button
+              onClick={() => addToCart({ ...book, quantity: quantity })}
+              className="book-add-to-cart-btn"
+            >
               <i className="bi bi-cart-plus" />
               Add To Cart
             </button>
