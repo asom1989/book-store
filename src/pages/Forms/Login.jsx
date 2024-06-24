@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   // Form Submit Handler
   const formSubmitHandler = (event) => {
@@ -24,6 +25,11 @@ const Login = () => {
     setEmail("");
     setPassword("");
   };
+  // show Password handlar
+  const showPasswordToggel = () => {
+    setShowPassword((prev) => !prev);
+  };
+
   return (
     <div className="form-wrapper">
       <ToastContainer />
@@ -38,9 +44,21 @@ const Login = () => {
         <input
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          type="password"
+          type={showPassword ? "text" : "password"}
           placeholder="Password"
         />
+        {showPassword ? (
+          <i
+            onClick={showPasswordToggel}
+            className="bi bi-eye-slash-fill show-password-icon"
+          />
+        ) : (
+          <i
+            onClick={showPasswordToggel}
+            className="bi bi-eye-fill show-password-icon"
+          />
+        )}
+
         <button className="form-btn" type="submit">
           Login
         </button>

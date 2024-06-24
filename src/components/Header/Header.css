@@ -23,6 +23,7 @@ header {
 .header-top-phone,
 .header-top-text,
 .header-top-link {
+  text-decoration: none;
   font-size: 27px;
   font-weight: 500;
   color: var(--main-color);

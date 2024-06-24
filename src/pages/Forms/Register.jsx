@@ -26,10 +26,10 @@ const Register = () => {
       return toast.error("Password is required");
     }
 
-    console.log({ email, password, username });
-    setEmail("");
-    setPassword("");
-    setUsername("");
+    // console.log({ email, password, username });
+    // setEmail("");
+    // setPassword("");
+    // setUsername("");
   };
   return (
     <div className="form-wrapper">
